@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/5290e5dee9.js" crossorigin="anonymous"></script>
+    <style>
+      .shopping-cart{
+          display: flex;
+      }
+      .like {
+        color: red;
+    }
+  </style>
+  
+</head>
+<body>
+  <main class="shopping-cart">
+    <div class="bg-white">
+      <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <h2 class="sr-only">Products</h2>
+
+        <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          <!-- --------- cart 1--------->
+          <div class="cart1">
+            <div class="group">
+              <button class="delete-btn">X</button>
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <div>
+                <div class="flex justify-between">
+                  <h3 class="mt-4 text-sm text-gray-700">Earthen Bottle</h3>
+                  <i class="fa-solid fa-heart mt-3"></i>
+                </div>
+                <div class="flex justify-between mr-3">
+                  <p class="mt-1 text-lg font-medium text-gray-900 w-2/3"><span id="price1">65</span>$</p>
+                  <button class="text-2xl font-semibold text-gray-500" id="p1" onclick=add(this.id)>+</button>
+                  <p id="q1">0</p>
+                  <button class="text-2xl font-semibold text-gray-500" id="m1" onclick=minusClick(this.id)>-</button>
+                </div>
+              </div>
+              <hr />
+              <p class="font-normal text-sm text-gray-700 mt-3">Total for this article = <span id="t1">0</span></p>
+            </div>
+          </div>
+          <!-- --------- cart 2--------->
+          <div class="cart2">
+            <div class="group">
+              <button class="delete-btn">X</button>
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <div>
+                <div class="flex justify-between">
+                  <h3 class="mt-4 text-sm text-gray-700">Nomad Tumbler</h3>
+                  <i class="fa-solid fa-heart mt-3"></i>
+                </div>
+                <div class="flex justify-between mr-3">
+                  <p class="mt-1 text-lg font-medium text-gray-900 w-2/3"><span id="price2">35</span>$</p>
+                  <button class="text-2xl font-semibold text-gray-500" id="p2" onclick=add(this.id)>+</button>
+                  <p id="q2">0</p>
+                  <button class="text-2xl font-semibold text-gray-500" id="m2" onclick=minusClick(this.id)>-</button>
+                </div>
+              </div>
+              <hr />
+              <p class="font-normal text-sm text-gray-700 mt-3">Total for this article = <span id="t2">0</span></p>
+            </div>
+          </div>
+          <!-- --------- cart 3--------->
+          <div class="cart3">
+            <div class="group">
+              <button class="delete-btn">X</button>
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <div>
+                <div class="flex justify-between">
+                  <h3 class="mt-4 text-sm text-gray-700">Focus Paper Refill</h3>
+                  <i class="fa-solid fa-heart mt-3"></i>
+                </div>
+                <div class="flex justify-between mr-3">
+                  <p class="mt-1 text-lg font-medium text-gray-900 w-2/3"><span id="price3">9</span>$</p>
+                  <button class="text-2xl font-semibold text-gray-500" id="p3" onclick=add(this.id)>+</button>
+                  <p id="q3">0</p>
+                  <button class="text-2xl font-semibold text-gray-500" id="m3" onclick=minusClick(this.id)>-</button>
+                </div>
+              </div>
+              <hr />
+              <p class="font-normal text-sm text-gray-700 mt-3">Total for this article = <span id="t3">0</span></p>
+            </div>
+          </div>
+        
+          <!-- --------- cart 4--------->
+          <div class="cart4">
+            <div class="group">
+              <button class="delete-btn">X</button>
+              <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <div class="flex justify-between">
+                <h3 class="mt-4 text-sm text-gray-700">Machined Mechanical Pencil</h3>
+                <i class="fa-solid fa-heart mt-3"></i>
+              </div>
+              <div class="flex justify-between mr-3">
+                <p class="mt-1 text-lg font-medium text-gray-900 w-2/3"><span id="price4">35</span>$</p>
+                <button class="text-2xl font-semibold text-gray-500" id="p4" onclick=add(this.id)>+</button>
+                <p id="q4">0</p>
+                <button class="text-2xl font-semibold text-gray-500" id="m4" onclick=minusClick(this.id)>-</button>
+              </div>
+            </div>
+            <hr />
+            <p class="font-normal text-sm text-gray-700 mt-3">Total for this article = <span id="t4">0</span></p>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+</main>
+<center>
+  <div class="my-16">
+    
+    <p class="font-semibold text-lg  mt-3">Total for all items = <span id="totalP">0</span></p>
+  </div>
+
+</center>
+   
+  
+    
+    <script src="script.js"></script>
+</body>
+</html>
